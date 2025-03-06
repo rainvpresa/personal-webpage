@@ -442,4 +442,38 @@ p {
   text-align: center;
 }
 
+/*---------------------------------- Mobile Responsive Styles-----------------------*/
+@media screen and (max-width: 768px) {
+    .contact-container {
+        width: 95%; /* Take up more space on mobile */
+        margin: 1.5rem auto;
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 20px; /* Adjust title size */
+        margin: 15px;
+    }
+
+    .contact-gif {
+        width: 200px; /* Make it smaller for small screens */
+    }
+
+    .contact-message {
+        font-size: 14px; /* Reduce text size */
+        padding: 10px;
+        margin: 5px auto;
+        max-width: 90%;
+    }
+
+    .contact-links a {
+        font-size: 18px; /* Adjust icons to fit */
+        margin: 5px;
+    }
+
+    .contact-links p {
+        font-size: 14px;
+    }
+}
+
 </style>
