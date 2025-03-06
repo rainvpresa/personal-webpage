@@ -183,155 +183,184 @@ p {
 }
 /* ---------------------------------------- Navigation Bar ---------------------------------------------- */
 .navbar {
-position: fixed;
-top: 0;
-width: 100%;
-background-color: #f7e7d1; 
-color: #4a3b2b;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 12px;
-z-index: 1000;
-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f7e7d1; 
+    color: #4a3b2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar .logo img {
-height: 65px; /* Adjust the height of the logo */
-width: auto; /* Maintain aspect ratio */
-display: block; /* Ensure proper spacing around the image */
+    height: 65px; /* Adjust the height of the logo */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper spacing around the image */
 }
 
 
-.navbar a, 
-.navbar .nav-link {
-  color: #4a3b2b; 
-  font-size: 20px;
-  text-decoration: none; 
-  padding: 10px 25px; 
-  transition: background-color 0.3s ease, color 0.3s ease; 
+.navbar a {
+    color: #4a3b2b; 
+    font-size: 20px;
+    text-decoration: none; 
+    padding: 10px 25px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-.navbar a:hover, 
-.navbar .nav-link:hover {
-  background-color: #d4b59b; 
-  color: #fff; 
-  border-radius: 5px;
+.navbar a:hover {
+    background-color: #d4b59b; 
+    color: #fff; 
+    border-radius: 5px;
 }
 
 /* Dropdown styling */
 .dropdown {
-position: relative;
-display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .dropbtn {
-background-color: transparent;
-border: none;
-cursor: pointer;
-font-size: 16px;
-color: #4a3b2b;
-padding: 10px 15px;
-transition: color 0.3s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4a3b2b;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
 
-  /* Remove unwanted shadows */
+      /* Remove unwanted shadows */
   box-shadow: none;
   text-shadow: none;
 }
 
 .dropbtn:hover {
-color: #d4b59b;
+    color: #d4b59b;
 }
 
 /* Dropdown icon */
 .dropdown-icon {
-font-size: 16px;
-margin-left: 5px;
-transition: transform 0.3s ease; /* Animation for rotation */
+    font-size: 16px;
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Animation for rotation */
 }
 
 /* Dropdown content */
 .dropdown-content {
-display: none;
-position: absolute;
-right: 0; /* Align dropdown below the icon */
-background-color: #fff;
-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-z-index: 1;
-min-width: 250px;
-border-radius: 5px;
-opacity: 0;
-visibility: hidden;
-transform: translateY(10px); /* Start with a slight downward position */
-transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-up */
+    display: none;
+    position: absolute;
+    right: 0; /* Align dropdown below the icon */
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 250px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Start with a slight downward position */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth fade-in and slide-up */
 }
 
 /* Dropdown sections */
 .dropdown-section {
-padding: 15px;
-border-bottom: 1px solid #f7e7d1;
+    padding: 15px;
+    border-bottom: 1px solid #f7e7d1;
 }
 
 .dropdown-title {
-font-size: 16px;
-font-weight: bold;
-color: #4a3b2b;
-margin-bottom: 10px;
-text-transform: uppercase; /* Optional: Make titles uppercase for a neat look */
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a3b2b;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Optional: Make titles uppercase for a neat look */
 }
 
 /* Dropdown items */
 .dropdown-content a {
-color: #4a3b2b;
-padding: 8px 15px;
-text-decoration: none;
-display: block;
-transition: background-color 0.3s ease;
+    color: #4a3b2b;
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
 }
 
 .dropdown-content a:hover {
-background-color: #f7e7d1;
+    background-color: #f7e7d1;
 }
 
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
-display: block;
-opacity: 1;
-visibility: visible;
-transform: translateY(0); /* Slide to the original position */
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide to the original position */
 }
 
 /* Rotate the arrow when dropdown is open */
 .dropdown:hover .dropdown-icon {
-transform: rotate(180deg); /* Rotate arrow */
+    transform: rotate(180deg); /* Rotate arrow */
 }
 
-/* Responsive Design */
+/* Ensure dropdown works on mobile */
+.dropdown:focus-within .dropdown-content,
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide to the original position */
+}
+
 @media screen and (max-width: 768px) {
-.nav-links a {
-    font-size: 16px;  /* Decrease font size for small screens */
-    padding: 8px 12px;
+  .navbar {
+    display: flex;
+    justify-content: center; /* Center items */
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .logo {
+    display: none; /* Hides logo on mobile */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* More spacing for better touch accessibility */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .dropbtn {
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-icon {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background: white;
+    width: auto;
+    min-width: 150px;
+    text-align: left;
 }
 
-.dropdown-content a {
-    font-size: 14px;  /* Make dropdown text smaller */
 }
 
-.dropbtn {
-    font-size: 14px;  /* Adjust dropdown button size */
-    padding: 8px 10px;
-}
 
-/* Reduce logo size for small screens */
-.navbar .logo img {
-    height: 50px;
-}
-
-/* Reduce padding of navbar */
-.navbar {
-    padding: 8px 15px;
-}
-}   
 #banner {
     height: 100vh;
     display: flex;

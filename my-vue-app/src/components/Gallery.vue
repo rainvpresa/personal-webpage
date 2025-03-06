@@ -426,26 +426,18 @@ p {
 }
 
 
-.nav-links {
-  display: flex;
-  align-items: center;
+.navbar a {
+    color: #4a3b2b; 
+    font-size: 20px;
+    text-decoration: none; 
+    padding: 10px 25px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Ensure both <a> and <router-link> look the same */
-.navbar a, 
-.navbar .nav-link {
-  color: #4a3b2b;
-  font-size: 20px;
-  text-decoration: none;
-  padding: 10px 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar a:hover, 
-.navbar .nav-link:hover {
-  background-color: #d4b59b;
-  color: #fff;
-  border-radius: 5px;
+.navbar a:hover {
+    background-color: #d4b59b; 
+    color: #fff; 
+    border-radius: 5px;
 }
 
 /* Dropdown styling */
@@ -535,32 +527,63 @@ p {
     transform: rotate(180deg); /* Rotate arrow */
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .nav-links a {
-        font-size: 16px;  /* Decrease font size for small screens */
-        padding: 8px 12px;
-    }
-
-    .dropdown-content a {
-        font-size: 14px;  /* Make dropdown text smaller */
-    }
-
-    .dropbtn {
-        font-size: 14px;  /* Adjust dropdown button size */
-        padding: 8px 10px;
-    }
-
-    /* Reduce logo size for small screens */
-    .navbar .logo img {
-        height: 50px;
-    }
-
-    /* Reduce padding of navbar */
-    .navbar {
-        padding: 8px 15px;
-    }
+/* Ensure dropdown works on mobile */
+.dropdown:focus-within .dropdown-content,
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide to the original position */
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: center; /* Center items */
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .logo {
+    display: none; /* Hides logo on mobile */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* More spacing for better touch accessibility */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .dropbtn {
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-icon {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background: white;
+    width: auto;
+    min-width: 150px;
+    text-align: left;
+}
+
+}
+
+
 /* ------------------------------------------------ Banner & Header ---------------------------*/
 #banner {
     height: 100vh;
