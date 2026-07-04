@@ -649,7 +649,7 @@ li {
   .teapot {
     width: 100%;
     height: 100%;
-    background: url('https://media.discordapp.net/attachments/1155238663953862718/1346810061263212576/teapot.png?ex=67c98a1d&is=67c8389d&hm=a3be564c230d46ef55b67b0bc36dffc71b0e8d1d83a6b15d55d32f988bbc3efa&=&format=webp&quality=lossless') no-repeat center;
+    background: url('/teapot.png') no-repeat center;
     background-size: contain;
     transform-origin: top center;
     transition: transform 0.5s ease;
